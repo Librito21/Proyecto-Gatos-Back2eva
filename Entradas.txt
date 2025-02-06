@@ -1,0 +1,30 @@
+Gatos:
+
+-Razas:
+
+Blanco
+Negro
+Blanco y negro
+Naranja
+Tricolor
+
+
+-Protectora:
+Bigotes Callejeros
+Zarpas
+4 gatos y tú
+
+
+
+
+Protectoras:
+
+-Nombre Protectora:
+Bigotes Callejeros
+Zarpas
+4 gatos y tú
+
+-Correo protectora:
+bigotescallejeroszgz@gmail.com
+info@zarpa.org
+asociacion4gatosytu@gmail.com
