@@ -52,8 +52,9 @@ CREATE TABLE Gato (
 
 INSERT INTO Gato (Id_Protectora, Nombre_Gato, Raza, Edad, Esterilizado, Sexo, Descripcion_Gato, Imagen_Gato)
 VALUES 
-(1, 'Misifu', 'Negro', 3, 0, 'Hembra', 'Muy juguetona', 'Gato1.png'),
-(2, 'Garfield', 'Naranja', 1, 1, 'Macho', 'Está gordo', 'Gato2.png');
+(1, 'Misifu', 'Negro', 3, 0, 'Hembra', 'Muy juguetona', 'Imagenes/Gato1.png'),
+(2, 'Garfield', 'Naranja', 1, 1, 'Macho', 'Está gordo', 'Imagenes/Gato2.png'),
+(2, 'Gitano', 'Tricolor', 7, 1, 'Macho', 'Vino en una camada grande', 'Imagenes/Gato3.png');
 
 SELECT * FROM Gato;
 
