@@ -1,31 +1,46 @@
-using RestauranteAPI.Controllers;
-using RestauranteAPI.Repositories;
-using RestauranteAPI.Services;
+using ProtectoraAPI.Controllers;
+using ProtectoraAPI.Repositories;
+using ProtectoraAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("RestauranteDB");
+var connectionString = builder.Configuration.GetConnectionString("ProtectoraDB");
 
-builder.Services.AddScoped<IPlatoPrincipalRepository, PlatoPrincipalRepository>(provider =>
-new PlatoPrincipalRepository(connectionString));
+// Repositorios
+builder.Services.AddScoped<IGatoRepository, GatoRepository>(provider =>
+    new GatoRepository(connectionString));
 
-builder.Services.AddScoped<IBebidaRepository, IBebidaRepository>(provider =>
-new BebidaRepository(connectionString));
+builder.Services.AddScoped<IProtectoraRepository, ProtectoraRepository>(provider =>
+    new ProtectoraRepository(connectionString));
 
-builder.Services.AddScoped<IPostreRepository, IPostreRepository>(provider =>
-new PostreRepository(connectionString));
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(provider =>
+    new UsuarioRepository(connectionString));
 
-builder.Services.AddScoped<IPlatoPrincipalService, PlatoPrincipalService>(provider =>
-new PlatoPrincipalService(connectionString));
-// Add services to the container.
+builder.Services.AddScoped<IDeseadoRepository, DeseadoRepository>(provider =>
+    new DeseadoRepository(connectionString));
 
+// Servicios
+builder.Services.AddScoped<IGatoService, GatoService>(provider =>
+    new GatoService(provider.GetRequiredService<IGatoRepository>()));
+
+builder.Services.AddScoped<IProtectoraService, ProtectoraService>(provider =>
+    new ProtectoraService(provider.GetRequiredService<IProtectoraRepository>()));
+
+builder.Services.AddScoped<IUsuarioService, UsuarioService>(provider =>
+    new UsuarioService(provider.GetRequiredService<IUsuarioRepository>()));
+
+builder.Services.AddScoped<IDeseadoService, DeseadoService>(provider =>
+    new DeseadoService(provider.GetRequiredService<IDeseadoRepository>()));
+
+// Agregar controladores
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Configuración Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configuración del pipeline HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -38,7 +53,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
-
-//PlatoPrincipalController.InicializarDatos();
 app.Run();
