@@ -42,7 +42,7 @@ CREATE TABLE Gato (
     Id_Protectora INT NOT NULL,
     Nombre_Gato VARCHAR(100) NOT NULL,
     Raza VARCHAR(100) NOT NULL,
-    Edad NUMERIC(3) NOT NULL,
+    Edad INT NOT NULL,
     Esterilizado BIT NOT NULL,
     Sexo VARCHAR(10) NOT NULL,
     Descripcion_Gato VARCHAR(500) NOT NULL,

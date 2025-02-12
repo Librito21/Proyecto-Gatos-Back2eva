@@ -20,7 +20,7 @@ namespace ProtectoraAPI.Repositories
             {
                 await connection.OpenAsync();
 
-                string query = "SELECT * FROM Gatos";
+                string query = "SELECT * FROM Gato";
                 using (var command = new SqlCommand(query, connection))
                 {
                     using (var reader = await command.ExecuteReaderAsync())

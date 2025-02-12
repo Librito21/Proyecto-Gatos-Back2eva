@@ -3,7 +3,7 @@ using ProtectoraAPI.Repositories;
 using ProtectoraAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("ProtectoraDB");
+var connectionString = builder.Configuration.GetConnectionString("GatosDB");
 
 // Repositorios
 builder.Services.AddScoped<IGatoRepository, GatoRepository>(provider =>
