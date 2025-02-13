@@ -25,14 +25,14 @@ CREATE TABLE Protectora (
     Direccion VARCHAR(100) NOT NULL,
     Correo_Protectora VARCHAR(100) NOT NULL,
     Telefono_Protectora VARCHAR(15) NOT NULL,
-    Horario_Atención VARCHAR(100) NOT NULL,
+    Pagina_Web VARCHAR(100) NOT NULL,
     Imagen_Protectora VARCHAR(100) NOT NULL,
 );
 
-INSERT INTO Protectora (Nombre_Protectora, Direccion, Correo_Protectora, Telefono_Protectora, Horario_Atención, Imagen_Protectora)
+INSERT INTO Protectora (Nombre_Protectora, Direccion, Correo_Protectora, Telefono_Protectora, Pagina_Web, Imagen_Protectora)
 VALUES 
-('Bigotes Callejeros', 'El Picarral', 'Bigotescallejeros@gmail.com', '123456789', 'De 10:00 a 18:30', 'url.png'),
-('Zarpa', 'Puerto Venecia', 'Zarpa@gmail.com', '14141414', 'De 11:00 a 20:00', 'url2.png');
+('Bigotes Callejeros', 'El Picarral', 'Bigotescallejeros@gmail.com', '123456789', 'https://bigotescallejeros.wordpress.com/', 'url.png'),
+('Adala', 'Casco antiguo', 'adala@gmail.com', '14141414', 'www.adalazaragoza.com', 'url2.png');
 
 SELECT * FROM Protectora;
 
@@ -45,15 +45,19 @@ CREATE TABLE Gato (
     Edad INT NOT NULL,
     Esterilizado BIT NOT NULL,
     Sexo VARCHAR(10) NOT NULL,
-    Descripcion_Gato VARCHAR(500) NOT NULL,
+    Descripcion_Gato VARCHAR(1000) NOT NULL,
     Imagen_Gato VARCHAR(100),
     FOREIGN KEY (Id_Protectora) REFERENCES Protectora(Id_Protectora)
 );
 
 INSERT INTO Gato (Id_Protectora, Nombre_Gato, Raza, Edad, Esterilizado, Sexo, Descripcion_Gato, Imagen_Gato)
 VALUES 
-(1, 'Misifu', 'Negro', 3, 0, 'Hembra', 'Muy juguetona', 'Gato1.png'),
-(2, 'Garfield', 'Naranja', 1, 1, 'Macho', 'Está gordo', 'Gato2.png');
+(1, 'Widow', 'Pardo', 4, 0, 'Macho', 'Al haber vivido mucho tiempo en la calle es algo desconfiado. Necesita que le den su espacio para no sentirse amenazado.', 'Gato1.png'),
+(2, 'Claudia', 'Gris', 1, 1, 'Hembra', 'Tiene el típico carácter de nu gato, cercana pero cuando ella quiere.', 'Gato2.png'),
+(1, 'Sira', 'Pardo', 1, 1, 'Hembra', 'Es una gata que se encontró en un polígono y al principio es un poco tímida pero con un poco de paciencia es muy cariñosa.', 'Gato3.png'),
+(1, 'Milu', 'Tuxedo', 7, 1, 'Macho', 'Es muy bueno.', 'Gato4.png'),
+(1, 'Lupita', 'Blanca', 1, 1, 'Hembra', 'Necesita una familia con paciencia, tiene muchos miedos y necesita tiempo para volver a confiar.', 'Gato5.png'),
+(2, 'Charlotte', 'Tuxedo', 1, 1, 'Hembra', 'Es muy buena y un amor.', 'Gato6.png');
 
 SELECT * FROM Gato;
 

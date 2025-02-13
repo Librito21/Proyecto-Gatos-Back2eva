@@ -51,8 +51,10 @@ namespace ProtectoraAPI.Controllers
 
            existingProtectora.Nombre_Protectora = updatedProtectora.Nombre_Protectora;
            existingProtectora.Direccion = updatedProtectora.Direccion;
-           existingProtectora.Telefono = updatedProtectora.Telefono;
            existingProtectora.Email = updatedProtectora.Email;
+           existingProtectora.Telefono = updatedProtectora.Telefono;
+           existingProtectora.Pagina_Web = updatedProtectora.Pagina_Web;
+           existingProtectora.Imagen_Protectora = updatedProtectora.Imagen_Protectora;
 
            await _repository.UpdateAsync(existingProtectora);
            return NoContent();
