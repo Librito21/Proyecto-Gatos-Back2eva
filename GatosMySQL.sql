@@ -52,12 +52,12 @@ CREATE TABLE Gato (
 
 INSERT INTO Gato (Id_Protectora, Nombre_Gato, Raza, Edad, Esterilizado, Sexo, Descripcion_Gato, Imagen_Gato)
 VALUES 
-(1, 'Widow', 'Pardo', 4, 0, 'Macho', 'Al haber vivido mucho tiempo en la calle es algo desconfiado. Necesita que le den su espacio para no sentirse amenazado.', 'Gato1.png'),
-(2, 'Claudia', 'Gris', 1, 1, 'Hembra', 'Tiene el típico carácter de nu gato, cercana pero cuando ella quiere.', 'Gato2.png'),
-(1, 'Sira', 'Pardo', 1, 1, 'Hembra', 'Es una gata que se encontró en un polígono y al principio es un poco tímida pero con un poco de paciencia es muy cariñosa.', 'Gato3.png'),
-(1, 'Milu', 'Tuxedo', 7, 1, 'Macho', 'Es muy bueno.', 'Gato4.png'),
-(1, 'Lupita', 'Blanca', 1, 1, 'Hembra', 'Necesita una familia con paciencia, tiene muchos miedos y necesita tiempo para volver a confiar.', 'Gato5.png'),
-(2, 'Charlotte', 'Tuxedo', 1, 1, 'Hembra', 'Es muy buena y un amor.', 'Gato6.png');
+(1, 'Widow', 'Pardo', 4, 0, 'Macho', 'Al haber vivido mucho tiempo en la calle es algo desconfiado. Necesita que le den su espacio para no sentirse amenazado.', '/Images/Widow.png'),
+(2, 'Claudia', 'Gris', 1, 1, 'Hembra', 'Tiene el típico carácter de nu gato, cercana pero cuando ella quiere.', '/Images/Claudia.png'),
+(1, 'Sira', 'Pardo', 1, 1, 'Hembra', 'Es una gata que se encontró en un polígono y al principio es un poco tímida pero con un poco de paciencia es muy cariñosa.', '/Images/Sira.png'),
+(1, 'Milu', 'Tuxedo', 7, 1, 'Macho', 'Es muy bueno.', '/Images/Milu.png'),
+(1, 'Lupita', 'Blanca', 1, 1, 'Hembra', 'Necesita una familia con paciencia, tiene muchos miedos y necesita tiempo para volver a confiar.', '/Images/Lupita.png'),
+(2, 'Charlotte', 'Tuxedo', 1, 1, 'Hembra', 'Es muy buena y un amor.', '/Images/Charlotte.png');
 
 SELECT * FROM Gato;
 
