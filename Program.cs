@@ -31,6 +31,19 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>(provider =>
 builder.Services.AddScoped<IDeseadoService, DeseadoService>(provider =>
     new DeseadoService(provider.GetRequiredService<IDeseadoRepository>()));
 
+var AllowAll = "_AllowAll";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "_AllowAll",
+        policy =>
+        {
+                  policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
+});
+
 // Agregar controladores
 builder.Services.AddControllers();
 
