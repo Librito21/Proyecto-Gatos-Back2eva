@@ -31,8 +31,8 @@ CREATE TABLE Protectora (
 
 INSERT INTO Protectora (Nombre_Protectora, Direccion, Correo_Protectora, Telefono_Protectora, Pagina_Web, Imagen_Protectora)
 VALUES 
-('Bigotes Callejeros', 'El Picarral', 'Bigotescallejeros@gmail.com', '123456789', 'https://bigotescallejeros.wordpress.com/', 'url.png'),
-('Adala', 'Casco antiguo', 'adala@gmail.com', '14141414', 'www.adalazaragoza.com', 'url2.png');
+('Bigotes Callejeros', 'El Picarral', 'Bigotescallejeros@gmail.com', '123456789', 'https://bigotescallejeros.wordpress.com/', '/Images/BigotesCallejeros.png'),
+('Adala', 'Casco antiguo', 'adala@gmail.com', '14141414', 'www.adalazaragoza.com', '/Images/Adala.png');
 
 SELECT * FROM Protectora;
 
@@ -59,13 +59,12 @@ VALUES
 (2, 'Lupita', 'Blanca', 1, 1, 'Hembra', 'Necesita una familia con paciencia, tiene muchos miedos y necesita tiempo para volver a confiar.', '/Images/Lupita.png'),
 (2, 'Charlotte', 'Tuxedo', 1, 1, 'Hembra', 'Es muy buena y un amor.', '/Images/Charlotte.png'),
 (1, 'Tulipa', 'Tuxedo', 1, 1, 'Hembra', 'Es muy enérgica y le gusta mucho jugar con alguien a todas horas.', '/Images/Tulipa.png'),
-(1, 'Vix', 'Siamés', 1, 1, 'Macho', 'Es muy cariñoso y siempre quiere jugar.', '/Images/Vix.png'),
-(1, 'Daisy', 'Pardo', 100, 1, 'Hembra', 'Sin info.', '/Images/Daisy.png'),
-(1, 'Ryu', 'Pardo', 3, 1, 'Hembra', 'Es algo distante, no le gusta que se le echen encima y necesita su espacio.', '/Images/Ryu.png'),
-(1, 'Blanqui', 'Blanco y negro', 100, 1, 'Macho', 'Sin info.', '/Images/Blanqui.png'),
-(1, 'Cookie', 'Negro', 100, 1, 'Macho', 'Sin info.', '/Images/Cookie.png'),
-(1, 'Kika', 'Pardo', 100, 1, 'Hembra', 'Sin info.', '/Images/Kika.png'),
-(1, 'Sol', 'Naranja y blanco', 100, 1, 'Macho', 'Sin info.', '/Images/Sol.png');
+(1, 'Martita', 'Naranja y negro', 3, 1, 'Hembra', 'Es muy sociable, tranquila y se adapta a otros gatos.', '/Images/Martita.png'),
+(1, 'Tito', 'Pardo', 1, 1, 'Macho', 'Hubo que amputarle el rabo por una infección pero no le impide jugar y dar cariño.', '/Images/Tito.png'),
+(1, 'Melocotón', 'Naranja y negro', 2, 1, 'Macho', 'Necesita compañía y se lleva genial con otros gatos y personas.', '/Images/Melocoton.png'),
+(1, 'Lucas', 'Pardo', 1, 1, 'Macho', 'Necesita una adopción estable, alguien que realmente ame a los animales y tenga paciencia para respetar su espacio, y que poco a poco se vaya acercando.', '/Images/Lucas.png'),
+(1, 'Chloe', 'Blanco y pardo', 1, 1, 'Hembra', 'Necesita una adopción estable, alguien que realmente ame a los animales y tenga paciencia para respetar su espacio, y que poco a poco se vaya acercando.', '/Images/Chloe.png'),
+(1, 'Carter', 'Blanco y pardo', 1, 1, 'Macho', 'Es un cachorrito muy juguetón al que le encanta socializar y pasar el rato con todo el mundo.', '/Images/Carter.png');
 
 
 SELECT * FROM Gato;
