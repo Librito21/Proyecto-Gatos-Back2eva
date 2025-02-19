@@ -73,14 +73,14 @@ CREATE TABLE Deseados (
     Id_Deseado INT IDENTITY(1,1) PRIMARY KEY,
     Id_Usuario INT NOT NULL,
     Id_Gato INT NOT NULL,
+    Fecha_Deseado DATETIME NOT NULL,
     FOREIGN KEY (Id_Usuario) REFERENCES Usuario(Id_Usuario) ON DELETE CASCADE,
     FOREIGN KEY (Id_Gato) REFERENCES Gato(Id_Gato) ON DELETE CASCADE,
 );
 
-INSERT INTO Deseados 
+INSERT INTO Deseados (Id_Usuario, Id_Gato, Fecha_Deseado)
 VALUES
-(1, 2),
-(2, 1),
-(2, 2);
+(1, 2, SYSDATETIME()),
+(1, 2, SYSDATETIME());
 
 SELECT * FROM Deseados;
