@@ -32,7 +32,7 @@ namespace ProtectoraAPI.Repositories
                                 Id_Deseado = reader.GetInt32(0),
                                 Id_Usuario = reader.GetInt32(1),
                                 Id_Gato = reader.GetInt32(2),
-                                FechaDeseo = reader.GetDateTime(3)
+                                Fecha_Deseado = reader.GetDateTime(3)
                             };
 
                             deseados.Add(deseado);
@@ -65,7 +65,7 @@ namespace ProtectoraAPI.Repositories
                                 Id_Deseado = reader.GetInt32(0),
                                 Id_Usuario = reader.GetInt32(1),
                                 Id_Gato = reader.GetInt32(2),
-                                FechaDeseo = reader.GetDateTime(3)
+                                Fecha_Deseado = reader.GetDateTime(3)
                             };
                         }
                     }
@@ -80,12 +80,12 @@ namespace ProtectoraAPI.Repositories
             {
                 await connection.OpenAsync();
 
-                string query = "INSERT INTO Deseados (Id_Usuario, Id_Gato, FechaDeseo) VALUES (@Id_Usuario, @Id_Gato, @FechaDeseo)";
+                string query = "INSERT INTO Deseados (Id_Usuario, Id_Gato, Fecha_Deseado) VALUES (@Id_Usuario, @Id_Gato, @Fecha_Deseado)";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id_Usuario", deseado.Id_Usuario);
                     command.Parameters.AddWithValue("@Id_Gato", deseado.Id_Gato);
-                    command.Parameters.AddWithValue("@FechaDeseo", deseado.FechaDeseo);
+                    command.Parameters.AddWithValue("@Fecha_Deseado", deseado.Fecha_Deseado);
 
                     await command.ExecuteNonQueryAsync();
                 }
