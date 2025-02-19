@@ -56,7 +56,7 @@ namespace ProtectoraAPI.Repositories
             {
                 await connection.OpenAsync();
 
-                string query = "SELECT * FROM Gatos WHERE Id_Gato = @Id";
+                string query = "SELECT * FROM Gato WHERE Id_Gato = @Id";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);
@@ -90,7 +90,7 @@ namespace ProtectoraAPI.Repositories
             {
                 await connection.OpenAsync();
 
-                string query = "INSERT INTO Gatos (Id_Protectora, Nombre_Gato, Raza, Edad, Esterilizado, Sexo, Descripcion_Gato, Imagen_Gato) VALUES (@Id_Protectora, @Nombre_Gato, @Raza, @Edad, @Esterilizado, @Sexo, @Descripcion_Gato, @Imagen_Gato)";
+                string query = "INSERT INTO Gato (Id_Protectora, Nombre_Gato, Raza, Edad, Esterilizado, Sexo, Descripcion_Gato, Imagen_Gato) VALUES (@Id_Protectora, @Nombre_Gato, @Raza, @Edad, @Esterilizado, @Sexo, @Descripcion_Gato, @Imagen_Gato)";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id_Protectora", gato.Id_Protectora);
@@ -113,7 +113,7 @@ namespace ProtectoraAPI.Repositories
             {
                 await connection.OpenAsync();
 
-                string query = "UPDATE Gatos SET Id_Protectora = @Id_Protectora, Nombre_Gato = @Nombre_Gato, Raza = @Raza, Edad = @Edad, Esterilizado = @Esterilizado, Sexo = @Sexo, Descripcion_Gato = @Descripcion_Gato, Imagen_Gato = @Imagen_Gato WHERE Id_Gato = @Id_Gato";
+                string query = "UPDATE Gato SET Id_Protectora = @Id_Protectora, Nombre_Gato = @Nombre_Gato, Raza = @Raza, Edad = @Edad, Esterilizado = @Esterilizado, Sexo = @Sexo, Descripcion_Gato = @Descripcion_Gato, Imagen_Gato = @Imagen_Gato WHERE Id_Gato = @Id_Gato";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id_Gato", gato.Id_Gato);
@@ -137,7 +137,7 @@ namespace ProtectoraAPI.Repositories
             {
                 await connection.OpenAsync();
 
-                string query = "DELETE FROM Gatos WHERE Id_Gato = @Id";
+                string query = "DELETE FROM Gato WHERE Id_Gato = @Id";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);
