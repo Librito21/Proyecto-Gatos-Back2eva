@@ -32,8 +32,9 @@ namespace ProtectoraAPI.Repositories
                                 Id_Usuario = reader.GetInt32(0),
                                 Nombre = reader.GetString(1),
                                 Apellido = reader.GetString(2),
-                                Email = reader.GetString(3),
-                                Telefono = reader.GetString(4)
+                                Contraseña = reader.GetString(3),
+                                Email = reader.GetString(4),
+                                Fecha_Registro = reader.GetDateTime(5)
                             };
 
                             usuarios.Add(usuario);
@@ -66,8 +67,9 @@ namespace ProtectoraAPI.Repositories
                                 Id_Usuario = reader.GetInt32(0),
                                 Nombre = reader.GetString(1),
                                 Apellido = reader.GetString(2),
-                                Email = reader.GetString(3),
-                                Telefono = reader.GetString(4)
+                                Contraseña = reader.GetString(3),
+                                Email = reader.GetString(4),
+                                Fecha_Registro = reader.GetDateTime(5)
                             };
                         }
                     }
@@ -82,13 +84,14 @@ namespace ProtectoraAPI.Repositories
             {
                 await connection.OpenAsync();
 
-                string query = "INSERT INTO Usuario (Nombre, Apellido, Email, Telefono) VALUES (@Nombre, @Apellido, @Email, @Telefono)";
+                string query = "INSERT INTO Usuario (Nombre, Apellido, Contraseña, Email, Fecha_Registro) VALUES (@Nombre, @Apellido, @Contraseña, @Email, @Fecha_Registro)";
                 using (var command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Nombre", usuario.Nombre);
                     command.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                    command.Parameters.AddWithValue("@Contraseña", usuario.Contraseña);
                     command.Parameters.AddWithValue("@Email", usuario.Email);
-                    command.Parameters.AddWithValue("@Telefono", usuario.Telefono);
+                    command.Parameters.AddWithValue("@Fecha_Registro", usuario.Fecha_Registro);
 
                     await command.ExecuteNonQueryAsync();
                 }

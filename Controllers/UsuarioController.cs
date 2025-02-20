@@ -52,7 +52,7 @@ namespace ProtectoraAPI.Controllers
            existingUsuario.Nombre = updatedUsuario.Nombre;
            existingUsuario.Apellido = updatedUsuario.Apellido;
            existingUsuario.Email = updatedUsuario.Email;
-           existingUsuario.Telefono = updatedUsuario.Telefono;
+           existingUsuario.Fecha_Registro = updatedUsuario.Fecha_Registro;
 
            await _repository.UpdateAsync(existingUsuario);
            return NoContent();
