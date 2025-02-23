@@ -4,14 +4,14 @@ USE GatosDB;
 
 CREATE TABLE Usuario (
     Id_Usuario INT IDENTITY(1,1) PRIMARY KEY,
-    Nombre_Usuario VARCHAR(100) NOT NULL,
+    Nombre VARCHAR(100) NOT NULL,
     Apellido VARCHAR(100) NOT NULL,
     Contraseña VARCHAR(100) NOT NULL,
-    Email_Usuario VARCHAR(100) NOT NULL UNIQUE,
+    Email VARCHAR(100) NOT NULL UNIQUE,
     Fecha_Registro DATETIME NOT NULL,
 );
 
-INSERT INTO Usuario (Nombre_Usuario, Apellido, Contraseña, Email_Usuario, Fecha_Registro)
+INSERT INTO Usuario (Nombre, Apellido, Contraseña, Email, Fecha_Registro)
 VALUES 
 ('Juan', 'Juanez', 'juan123', 'juanjuan@gmail.com', SYSDATETIME()),
 ('Fran', 'Franez', 'fran123', 'franfran@gmail.com', SYSDATETIME());
