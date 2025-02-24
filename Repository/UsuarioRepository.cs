@@ -118,5 +118,45 @@ namespace ProtectoraAPI.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public async Task<Usuario?> GetByEmailAndPasswordAsync(string email, string password)
+        {
+            Usuario? usuario = null;
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                string query = "SELECT * FROM Usuario WHERE Email = @Email";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            usuario = new Usuario
+                            {
+                                Id_Usuario = reader.GetInt32(0),
+                                Nombre = reader.GetString(1),
+                                Apellido = reader.GetString(2),
+                                Contraseña = reader.GetString(3), // OJO: Hay que compararla con Hash
+                                Email = reader.GetString(4),
+                                Fecha_Registro = reader.GetDateTime(5)
+                            };
+                        }
+                    }
+                }
+            }
+
+            // Verificar contraseña (si está en texto plano, cambiar a bcrypt en el futuro)
+            if (usuario != null && usuario.Contraseña == password)
+            {
+                return usuario;
+            }
+
+            return null;
+        }
     }
 }
