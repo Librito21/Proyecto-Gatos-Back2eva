@@ -43,14 +43,19 @@ namespace ProtectoraAPI.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            var usuario = await _repository.GetByEmailAndPasswordAsync(request.Email, request.Password);
+            if (request == null || string.IsNullOrEmpty(request.email) || string.IsNullOrEmpty(request.contraseña))
+            {
+                return BadRequest(new { message = "Email y contraseña son obligatorios." });
+            }
+
+            var usuario = await _repository.GetByEmailAndPasswordAsync(request.email, request.contraseña);
 
             if (usuario == null)
             {
                 return Unauthorized(new { message = "Correo o contraseña incorrectos" });
             }
 
-            return Ok(new { message = "Login exitoso", userId = usuario.Id_Usuario, nombre = usuario.Nombre });
+            return Ok(new { message = "Login exitoso", userId = usuario.Id_Usuario });
         }
 
         [HttpPut("{id}")]
