@@ -14,7 +14,9 @@ CREATE TABLE Usuario (
 INSERT INTO Usuario (Nombre, Apellido, Contraseña, Email, Fecha_Registro)
 VALUES 
 ('Juan', 'Juanez', 'juan123', 'juanjuan@gmail.com', SYSDATETIME()),
-('Fran', 'Franez', 'fran123', 'franfran@gmail.com', SYSDATETIME());
+('Fran', 'Franez', 'fran123', 'franfran@gmail.com', SYSDATETIME()),
+('Daniel', 'Santamaria', 'daniel_123', 'a25586@svalero.com', SYSDATETIME()),
+('Roberto', 'Gomez', 'roberto_123', 'a25959@svalero.com', SYSDATETIME());
 
 SELECT * FROM Usuario;
 
