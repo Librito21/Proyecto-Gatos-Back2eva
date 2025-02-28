@@ -55,7 +55,7 @@ namespace ProtectoraAPI.Controllers
                 return Unauthorized(new { message = "Correo o contraseña incorrectos" });
             }
 
-            return Ok(new { message = "Login exitoso", userId = usuario.Id_Usuario, nombre = usuario.Nombre });
+            return Ok(new { message = "Login exitoso", userId = usuario.Id_Usuario, nombre = usuario.Nombre,apellido = usuario.Apellido, email = usuario.Email });
         }
 
         [HttpPut("{id}")]
