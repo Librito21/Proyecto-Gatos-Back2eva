@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProtectoraAPI.Repositories;
 using Models;
+using ProtectoraAPI.Models;
 
 namespace ProtectoraAPI.Controllers
 {
@@ -55,7 +56,7 @@ namespace ProtectoraAPI.Controllers
                 return Unauthorized(new { message = "Correo o contraseña incorrectos" });
             }
 
-            return Ok(new { message = "Login exitoso", userId = usuario.Id_Usuario, nombre = usuario.Nombre,apellido = usuario.Apellido, email = usuario.Email });
+            return Ok(new { message = "Login exitoso", userId = usuario.Id_Usuario, nombre = usuario.Nombre, apellido = usuario.Apellido, email = usuario.Email });
         }
 
         [HttpPut("{id}")]
@@ -75,6 +76,25 @@ namespace ProtectoraAPI.Controllers
             await _repository.UpdateAsync(existingUsuario);
             return NoContent();
         }
+
+        [HttpPut("{id}/cambiar-Contraseña")]
+        public async Task<IActionResult> CambiarContraseña(int id, [FromBody] CambiarContraseñaRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.NuevaContraseña))
+            {
+                return BadRequest(new { message = "La contraseña no puede estar vacía" });
+            }
+
+            var resultado = await _repository.ActualizarContraseñaAsync(id, request.NuevaContraseña);
+
+            if (!resultado)
+            {
+                return NotFound(new { message = "Usuario no encontrado" });
+            }
+
+            return Ok(new { message = "Contraseña actualizada correctamente" });
+        }
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
