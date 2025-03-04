@@ -67,7 +67,10 @@ VALUES
 (1, 'Lucas', 'Pardo', 1, 1, 'Macho', 'Necesita una adopción estable, alguien que realmente ame a los animales y tenga paciencia para respetar su espacio, y que poco a poco se vaya acercando.', '/Images/gatos/Lucas.png'),
 (1, 'Chloe', 'Blanco y pardo', 1, 1, 'Hembra', 'Necesita una adopción estable, alguien que realmente ame a los animales y tenga paciencia para respetar su espacio, y que poco a poco se vaya acercando.', '/Images/gatos/Chloe.png'),
 (1, 'Carter', 'Blanco y pardo', 1, 1, 'Macho', 'Es un cachorrito muy juguetón al que le encanta socializar y pasar el rato con todo el mundo.', '/Images/gatos/Carter.png'),
-(3, 'Muri', 'Siames', 10, 1, 'Hembra', 'Es una gatica muy buena. Actualmente se encuentra en una casa de acogida', '/Images/gatos/Muri.png');
+(1, 'Cookie', 'Negro', 2, 1, 'Hembra', 'Fue rescatada de un garaje. Aunque era una gatita muy miedosa cada día está más suelta, mimosa y divertida.', '/Images/gatos/Cookie.png'),
+(1, 'Tinto', 'Negro', 1, 1, 'Macho', 'Tinto se ha quedado solito, sus dos hermanos ya han sido adoptados, lo cual nos llena de alegría. Pero no podemos evitar sufrir por el pequeño, al que aún nadie ha dado una oportunidad.', '/Images/gatos/Tinto.png'),
+(1, 'Viserion', 'Blanco', 1, 1, 'Macho', 'Es un cachorro de una camada muy grande que ha salido muy jugetón y divertido.', '/Images/gatos/Viserion.png'),
+(3, 'Muri', 'Siames', 12, 1, 'Hembra', 'Es una gatica muy buena. Actualmente se encuentra en una casa de acogida pero parece que va a ser dificil encontrar una familia que le quiera más.', '/Images/gatos/Muri.png');
 
 SELECT * FROM Gato;
 
