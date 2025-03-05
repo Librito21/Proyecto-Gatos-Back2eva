@@ -45,7 +45,7 @@ namespace ProtectoraAPI.Controllers
            // Asigna el ID generado al objeto antes de devolverlo
            deseado.Id_Deseado = nuevoId;
 
-           return CreatedAtAction(nameof(GetDeseado), new { id = nuevoId }, deseado);
+           return Ok(new { id_Deseado = nuevoId, id_Gato = deseado.Id_Gato, id_Usuario = deseado.Id_Usuario });
        }
 
        [HttpDelete("{id}")]
