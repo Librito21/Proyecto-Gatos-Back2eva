@@ -86,7 +86,7 @@ CREATE TABLE Deseados (
 
 INSERT INTO Deseados (Id_Usuario, Id_Gato, Fecha_Deseado)
 VALUES
-(1, 2, SYSDATETIME()),
-(1, 2, SYSDATETIME());
+(3, 2, SYSDATETIME()),
+(1, 3, SYSDATETIME());
 
 SELECT * FROM Deseados;

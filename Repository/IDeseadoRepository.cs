@@ -6,7 +6,7 @@ namespace ProtectoraAPI.Repositories
     {
         Task<List<Deseado>> GetAllAsync();
         Task<Deseado?> GetByIdAsync(int id);
-        Task AddAsync(Deseado deseado);
+        Task<int> AddAsync(Deseado deseado);
         Task DeleteAsync(int id);
     }
 }

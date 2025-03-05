@@ -33,11 +33,19 @@ namespace ProtectoraAPI.Controllers
            return Ok(deseado);
        }
 
-       [HttpPost]
-       public async Task<ActionResult<Deseado>> CreateDeseado(Deseado deseado)
+        [HttpPost]
+        public async Task<ActionResult<Deseado>> CreateDeseado(Deseado deseado)
        {
-           await _repository.AddAsync(deseado);
-           return CreatedAtAction(nameof(GetDeseado), new { id = deseado.Id_Deseado }, deseado);
+           int nuevoId = await _repository.AddAsync(deseado);
+           if (nuevoId <= 0)
+           {
+               return BadRequest(new { message = "No se pudo agregar el gato a deseados" });
+           }
+
+           // Asigna el ID generado al objeto antes de devolverlo
+           deseado.Id_Deseado = nuevoId;
+
+           return CreatedAtAction(nameof(GetDeseado), new { id = nuevoId }, deseado);
        }
 
        [HttpDelete("{id}")]
