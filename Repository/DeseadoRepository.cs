@@ -74,6 +74,37 @@ namespace ProtectoraAPI.Repositories
             return deseado;
         }
 
+        public async Task<IEnumerable<Deseado>> ObtenerDeseadosPorUsuarioAsync(int Id_Usuario)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                string query = "SELECT * FROM Deseados WHERE Id_Usuario = @Id_Usuario";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id_Usuario", Id_Usuario);
+
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        List<Deseado> listaDeseados = new List<Deseado>();
+                        while (await reader.ReadAsync())
+                        {
+                            listaDeseados.Add(new Deseado
+                            {
+                                Id_Deseado = reader.GetInt32(0),
+                                Id_Usuario = reader.GetInt32(1),
+                                Id_Gato = reader.GetInt32(2),
+                                Fecha_Deseado = reader.GetDateTime(3)
+                            });
+                        }
+                        return listaDeseados;
+                    }
+                }
+            }
+        }
+
+
         public async Task<int> AddAsync(Deseado deseado)
         {
             using (var connection = new SqlConnection(_connectionString))
