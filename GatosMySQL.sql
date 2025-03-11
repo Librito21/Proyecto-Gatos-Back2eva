@@ -16,7 +16,8 @@ VALUES
 ('Juan', 'Juanez', 'juan123', 'juanjuan@gmail.com', SYSDATETIME()),
 ('Fran', 'Franez', 'fran123', 'franfran@gmail.com', SYSDATETIME()),
 ('Daniel', 'Santamaria', 'daniel_123', 'a25586@svalero.com', SYSDATETIME()),
-('Roberto', 'Gomez', 'roberto_123', 'a25959@svalero.com', SYSDATETIME());
+('Roberto', 'Gomez', 'roberto_123', 'a25959@svalero.com', SYSDATETIME()),
+('Admin', 'Administrador', 'admin_123', 'admin@gmail.com', SYSDATETIME());
 
 SELECT * FROM Usuario;
 
@@ -25,17 +26,17 @@ CREATE TABLE Protectora (
     Id_Protectora INT IDENTITY(1,1) PRIMARY KEY,
     Nombre_Protectora VARCHAR(100) NOT NULL,
     Direccion VARCHAR(100) NOT NULL,
-    Correo_Protectora VARCHAR(100) NOT NULL,
-    Telefono_Protectora VARCHAR(15) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Telefono VARCHAR(15) NOT NULL,
     Pagina_Web VARCHAR(100) NOT NULL,
-    Imagen_Protectora VARCHAR(100) NOT NULL,
+    Imagen_Protectora VARCHAR(MAX) NOT NULL,
 );
 
 INSERT INTO Protectora (Nombre_Protectora, Direccion, Correo_Protectora, Telefono_Protectora, Pagina_Web, Imagen_Protectora)
 VALUES 
 ('Bigotes Callejeros', 'El Picarral', 'Bigotescallejeros@gmail.com', '123456789', 'https://bigotescallejeros.wordpress.com/', '/Images/protectoras/BigotesCallejeros.png'),
 ('Adala', 'Casco antiguo', 'adala@gmail.com', '14141414', 'https://www.adalazaragoza.com', '/Images/protectoras/Adala.png'),
-('RoberCats', 'Violeta Parra', 'a25959@svalero.com', '692259511', 'https://www.sanvalero.es', '/Images/protectoras/RoberCats.png');
+('RoberCats', 'Violeta Parra', 'a25959@svalero.com', '692259511', 'https://www.sanvalero.es', '/Images/protectoras/Adalaa.png');
 
 SELECT * FROM Protectora;
 
@@ -49,7 +50,7 @@ CREATE TABLE Gato (
     Esterilizado BIT NOT NULL,
     Sexo VARCHAR(10) NOT NULL,
     Descripcion_Gato VARCHAR(1000) NOT NULL,
-    Imagen_Gato VARCHAR(100),
+    Imagen_Gato VARCHAR(MAX) NOT NULL,
     FOREIGN KEY (Id_Protectora) REFERENCES Protectora(Id_Protectora)
 );
 
