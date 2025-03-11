@@ -35,7 +35,7 @@ INSERT INTO Protectora (Nombre_Protectora, Direccion, Correo_Protectora, Telefon
 VALUES 
 ('Bigotes Callejeros', 'El Picarral', 'Bigotescallejeros@gmail.com', '123456789', 'https://bigotescallejeros.wordpress.com/', '/Images/protectoras/BigotesCallejeros.png'),
 ('Adala', 'Casco antiguo', 'adala@gmail.com', '14141414', 'https://www.adalazaragoza.com', '/Images/protectoras/Adala.png'),
-('RoberCats', 'Violeta Parra', 'a25959@svalero.com', '692259511', 'https://www.sanvalero.es', '/Images/protectoras/Adalaa.png');
+('RoberCats', 'Violeta Parra', 'a25959@svalero.com', '692259511', 'https://www.sanvalero.es', '/Images/protectoras/RoberCats.png');
 
 SELECT * FROM Protectora;
 
