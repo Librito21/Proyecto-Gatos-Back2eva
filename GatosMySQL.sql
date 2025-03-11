@@ -34,8 +34,8 @@ CREATE TABLE Protectora (
 INSERT INTO Protectora (Nombre_Protectora, Direccion, Correo_Protectora, Telefono_Protectora, Pagina_Web, Imagen_Protectora)
 VALUES 
 ('Bigotes Callejeros', 'El Picarral', 'Bigotescallejeros@gmail.com', '123456789', 'https://bigotescallejeros.wordpress.com/', '/Images/protectoras/BigotesCallejeros.png'),
-('Adala', 'Casco antiguo', 'adala@gmail.com', '14141414', 'www.adalazaragoza.com', '/Images/protectoras/Adala.png'),
-('RoberCats', 'Violeta Parra', 'a25959@svalero.com', '692259511', 'www.sanvalero.com', '/Images/protectoras/Adalaa.png');
+('Adala', 'Casco antiguo', 'adala@gmail.com', '14141414', 'https://www.adalazaragoza.com', '/Images/protectoras/Adala.png'),
+('RoberCats', 'Violeta Parra', 'a25959@svalero.com', '692259511', 'https://www.sanvalero.es', '/Images/protectoras/Adalaa.png');
 
 SELECT * FROM Protectora;
 
