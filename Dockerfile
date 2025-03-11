@@ -1,19 +1,19 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["WebApiEntityFrameworkDockerSqlServer.csproj", "."]
-RUN dotnet restore "./WebApiEntityFrameworkDockerSqlServer.csproj"
+COPY ["adoptaragon.csproj", "."]
+RUN dotnet restore "./adoptaragon.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "WebApiEntityFrameworkDockerSqlServer.csproj" -c Release -o /app/build
+RUN dotnet build "adoptaragon.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "WebApiEntityFrameworkDockerSqlServer.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "adoptaragon.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebApiEntityFrameworkDockerSqlServer.dll"]
+ENTRYPOINT ["dotnet", "adoptaragon.dll"]
