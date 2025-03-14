@@ -11,6 +11,10 @@ Librería: SQLOLEDB
  Usuario: sa
  Contraseña: yourStrong(!)Password
  Puerto: 1433
+
+Crear DB
+
+Para crear la database hay que ir al archivo "GatosMySQL.sql" y pegar el contenido en el programa de bases de datos
  
  Eliminar DB
  
