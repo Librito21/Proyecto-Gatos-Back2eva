@@ -114,9 +114,25 @@ namespace ProtectoraAPI.Repositories
             }
         }
 
-        public Task UpdateAsync(Usuario usuario)
+        public async Task UpdateAsync(Usuario usuario)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                string query = "UPDATE Usuario SET Nombre = @Nombre, Apellido = @Apellido, Contraseña = @Contraseña, Email = @Email, Fecha_Registro = @Fecha_Registro WHERE Id_Usuario = @Id_Usuario";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id_Usuario", usuario.Id_Usuario);
+                    command.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                    command.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                    command.Parameters.AddWithValue("@Contraseña", usuario.Contraseña);
+                    command.Parameters.AddWithValue("@Email", usuario.Email);
+                    command.Parameters.AddWithValue("@Fecha_Registro", usuario.Fecha_Registro);
+
+                    await command.ExecuteNonQueryAsync();
+                }
+            }
         }
 
         public async Task<Usuario?> GetByEmailAndPasswordAsync(string email, string password)

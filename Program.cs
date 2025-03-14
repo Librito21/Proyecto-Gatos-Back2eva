@@ -18,6 +18,9 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(provider =>
 builder.Services.AddScoped<IDeseadoRepository, DeseadoRepository>(provider =>
     new DeseadoRepository(connectionString));
 
+builder.Services.AddScoped<IConejoRepository, ConejoRepository>(provider =>
+    new ConejoRepository(connectionString));
+
 // Servicios
 builder.Services.AddScoped<IGatoService, GatoService>(provider =>
     new GatoService(provider.GetRequiredService<IGatoRepository>()));
@@ -30,6 +33,9 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>(provider =>
 
 builder.Services.AddScoped<IDeseadoService, DeseadoService>(provider =>
     new DeseadoService(provider.GetRequiredService<IDeseadoRepository>()));
+
+builder.Services.AddScoped<IConejoService, ConejoService>(provider =>
+    new ConejoService(provider.GetRequiredService<IConejoRepository>()));
 
 var AllowAll = "_AllowAll";
 
